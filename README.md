@@ -1,2 +1,2 @@
 # Project-MANAS
-Porject MANAS task phase related files
+Project MANAS task phase related files
