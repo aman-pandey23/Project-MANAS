@@ -1,0 +1,12 @@
+markbox()
+markbox function of return type int is used to mark the box with the symbol of the current player. It returns a 1 if the box is available and returns a 0 if the entered box location is already taken.
+
+showBoard()
+prints out the entire playing board to the console to show the user the available slots and previously entered slots
+
+winCheck()
+checks if either player has won after their most recent entry by checking all three in a row combinations in the playing board
+
+main()
+prints out the details of the game and the reference for numbers to input for box locations
+takes in input number for the X and 0's alternatively until a player wins or until there s a draw
