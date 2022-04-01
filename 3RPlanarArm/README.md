@@ -1,5 +1,7 @@
 3R planar arm project
 
+3Rplanartask.cpp is modified version of my code where we had to use the function polarxy() which is given to us
+
 Python Version 3 / any version of cpp needs to be installed to run the code files (.cpp/ .py) 
 Python version of code needs matplotlib to be installed in order to show the plots of the arm
 
