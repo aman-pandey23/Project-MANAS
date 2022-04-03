@@ -55,13 +55,19 @@ def getThetas():
 
 getThetas()
 
-Ax = l1*math.cos(math.radians(theta1)) 
-Ay = l1*math.sin(math.radians(theta1)) 
+Ax = l1*math.cos(theta1)
+Ay = l1*math.sin(theta1)
+
+Bx = Ax + l2*math.cos(theta1+theta2) 
+By = Ay + l2*math.sin(theta1+theta2) 
+
+Cx = Bx + l3*math.cos(theta1+theta2+theta3)
+Cy = By + l3*math.sin(theta1+theta2+theta3)
 
 x1,y1 = [0],[0]
 x2,y2 = [Ax],[Ay]
-x3,y3 = [xw],[yw]
-x4,y4 = [xe],[ye]
+x3,y3 = [Bx],[By]
+x4,y4 = [Cx],[Cy]
 
 plt.axis('scaled')
 plt.plot(x1, y1, marker="o", markersize=10, markerfacecolor="green")
@@ -70,8 +76,8 @@ plt.plot(x3, y3, marker="o", markersize=10, markerfacecolor="yellow")
 plt.plot(x4, y4, marker="o", markersize=10, markerfacecolor="blue")
 
 x1, y1 = [0, Ax], [0, Ay]
-x2, y2 = [Ax, xw], [Ay, yw]
-x3, y3 = [xw, xe], [yw, ye]
+x2, y2 = [Ax, Bx], [Ay, By]
+x3, y3 = [Bx, Cx], [By, Cy]
 plt.axis('square')
 plt.plot(x1, y1, marker = 'o',color = "green",linewidth = 30)
 plt.plot(x2, y2, marker = 'o',color = "red",linewidth = 20)
