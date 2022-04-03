@@ -1,0 +1,54 @@
+global M1output
+global M1output
+
+global prevErr
+global dt
+
+global E1,E2
+
+def startmoving()
+  M1output = 50
+  M2output = 50
+
+def proportional(err)
+  int kp = 4
+  a = kp * err
+  return a
+
+def integral(err)
+  int ki = 1
+  a = (prevErr + err) * ki
+  return a
+
+def derivative(err)
+  int kd = 2
+  a = ()(err - prevErr)/dt) * kd
+  return a
+
+
+def PID(err)
+  pr = proportional(err)
+  in = integral(err)
+  de = derivative(err)
+  PIDv = pr + in + de
+  return PIDv
+
+startMoving()
+
+k = 0
+
+mainLoop()
+  s1 = sensorRead(S1)
+  s2 = sensorRead(S2)
+  if(k == 1)
+    E2 =  gettime()
+    dt =  E2-E1
+  error = s1-s2
+  PID = PID(error)
+  if(PID < 0)
+    M1output += abs(PID)
+  if(PID > 0)
+    M2output += abs(PID)
+  E1 = gettime()
+  setMotorspeed(M1output,M2output)
+  k++
