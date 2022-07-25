@@ -1,0 +1,2 @@
+m2wr_description:motion_plan:teleop_twist_keyboard_cpp
+-DCATKIN_DEVEL_PREFIX=/home/aman/simulation_ws/devel -DCMAKE_INSTALL_PREFIX=/home/aman/simulation_ws/install -G Unix Makefiles
