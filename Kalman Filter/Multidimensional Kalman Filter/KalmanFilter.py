@@ -5,15 +5,10 @@ import time
 import math
 import matplotlib.pyplot as plt
 
-dataset1 = gen.CoordDataSet(0.2,5,50)
+dataset1 = gen.CoordDataSet(1,3,50)
 dataset1.generateData()
 
 class KalmanFilter:
-    '''
-    mmtTime = 1
-    accDev = 0.2
-    mmtErrDev = 3
-    '''
 
     xFilterVals = np.array([])
     yFilterVals = np.array([])

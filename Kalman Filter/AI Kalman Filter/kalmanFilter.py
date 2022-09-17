@@ -5,7 +5,7 @@ import math
 import matplotlib.pyplot as plt
 import GenerateDataSet as gen
 
-dataset1 = gen.CoordDataSet(0.2,5,50)
+dataset1 = gen.CoordDataSet(1,3,50)
 dataset1.generateData()
 
 class KalmanFilter:
@@ -114,7 +114,6 @@ class KalmanFilter:
         
         self.i += 1
         out = np.array([[self.Xn[0]],self.Xn[3]])
-        print(out)
         return(out)
 
 
@@ -158,5 +157,12 @@ Kf = KalmanFilter()
 while a < xSensorVals.size:
     cordd = np.array([[xSensorVals[a]],[ySensorVals[a]]])
     cord = Kf.getFilteredData(cordd)
+    xaFilterVals = np.append(xaFilterVals,cord[0])
+    yaFilterVals = np.append(yaFilterVals,cord[1])
+    
+    plt.plot(xSensorVals, ySensorVals, marker="o", markersize=3, markerfacecolor="green")
+    plt.plot(xaFilterVals, yaFilterVals, marker="o", markersize=3, markerfacecolor="red")
+    print(cord)
     a = a+1
 
+plt.show()
